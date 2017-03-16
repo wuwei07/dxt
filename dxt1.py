@@ -1,5 +1,6 @@
 from PIL import Image
 import numpy as np
+import sys
 
 def my_range(start, end, step):
     while start <= end:
@@ -149,7 +150,7 @@ def BTC(IMG, BSIZE_x, BSIZE_y):
     #---Finding Matching Points On The Line Through Color Space---#
             for i in my_range(0, bound_x - 1, 1):
                 for j in my_range(0, bound_y - 1, 1):
-                    mindist = 255;
+                    mindist = sys.maxsize;
                     for z in range(0, 3, 1):
                         dist = ColorDistance(c_array[z], block[i, j]);
                         if dist < mindist:
